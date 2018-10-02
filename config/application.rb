@@ -10,7 +10,7 @@ module SlackCommand
   class Application < Rails::Application
     # Expose our application's helpers to Administrate
     config.to_prepare do
-      Administrate::ApplicationController.helper Slack-command::Application.helpers
+      Administrate::ApplicationController.helper SlackCommand::Application.helpers
     end
     config.active_job.queue_adapter = :sidekiq
     config.application_name = Rails.application.class.parent_name
